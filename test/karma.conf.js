@@ -18,6 +18,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'bower_components/jquery/dist/jquery.js'
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-animate/angular-animate.js',
@@ -29,9 +30,9 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js', 
       'bower_components/datatables/media/js/jquery.dataTables.min.js',
       'bower_components/angular-datatables/dist/angular-datatables.min.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'app/scripts/**/*.js'
+      // 'test/mock/**/*.js',
+      // 'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
