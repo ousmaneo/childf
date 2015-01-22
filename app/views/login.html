@@ -1,0 +1,13 @@
+<div class="jumbotron row">
+  <form name="LoginForm" novalidate ng-submit="login()" class="form-signin">
+    <h2 class="form-signin-heading text-muted">Login</h2>
+    <div class="login-block">
+      <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
+      <input type="text" ng-model="auth.email" class="form-control" placeholder="Email" required autofocus>
+      <input type="password" ng-model="auth.password" class="form-control" placeholder="password" required>
+      <button class="btn btn-primary" type="submit">Ok</button>
+      <!-- <a class="btn btn-lg btn-primary btn-block" href="/auth/facebook">{{'LOGIN_FORM_LOGIN_WITH_FACEBOOK'|translate}} </a> -->
+      <!-- <a class="btn btn-lg btn-info btn-block" ui-sref="register">{{'REGISTRATION_FORM_REGISTER'|translate}}</a> -->
+    </div>      
+  </form>  
+</div>
