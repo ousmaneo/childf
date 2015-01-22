@@ -288,11 +288,11 @@ module.exports = function (grunt) {
     },
 
     // Replace Google CDN references
-    // cdnify: {
-    //   dist: {
-    //     html: ['<%= yeoman.dist %>/*.html']
-    //   }
-    // },
+    cdnify: {
+      dist: {
+        html: ['<%= yeoman.dist %>/*.html']
+      }
+    },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -385,14 +385,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    // 'wiredep',
+    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'concat',
     'ngAnnotate',
     'copy:dist',
-    // 'cdnify',
+    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
