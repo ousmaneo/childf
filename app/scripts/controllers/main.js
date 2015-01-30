@@ -39,6 +39,8 @@ angular.module('childfundApp')
     window.onresize = function() {
         $scope.$apply();
     };
+
+
     //Datatable:
      var vm = this;
     vm.dtOptions = DTOptionsBuilder.fromSource('scripts/controllers/data.json')

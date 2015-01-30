@@ -1,0 +1,44 @@
+<div ng-controller="ProjectsCtrl as Project">
+  <div class="row">
+    <div class="col-lg-12">
+      <ca-widget>
+        <widget-header icon="fa-tasks" title="Project">
+          <a href="#">Manage</a>
+          <a href="" class="btn btn-primary" ng-click="Project.show()">Create</a>
+        </widget-header>
+        <widget-body classes="medium no-padding">
+          <div class="table-responsive">
+            <table datatable="ng"  class="row-border hover">
+              <thead>
+              <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Program</td>
+                <td>Status</td>
+                <td>Created By</td>
+                <td>Modified by</td>
+                <td>Created Date</td>
+                <td>Modified Date</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="project in Project.projects">
+                <td>{{project._id}}</td>
+                <td>{{project.name}}</td>
+                <td>{{project.description}}</td>
+                <td>{{project.programid}}</td>
+                <td>{{project.status ? 'Active' : 'Inactive'}}</td>
+                <td>{{project.createdBy}}</td>
+                <td>{{project.modifiedBy}}</td>
+                <td>{{project.createdDate}}</td>
+                <td>{{project.modifiedDate}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </widget-body>
+      </ca-widget>
+    </div>
+  </div>
+</div>

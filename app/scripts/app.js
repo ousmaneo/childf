@@ -1,6 +1,13 @@
 'use strict';
 
 /**
+ * Underscore module
+ */
+var underscore = angular.module('underscore', []);
+underscore.factory('_', function() {
+  return window._; //Underscore must already be loaded on the page
+});
+/**
  * @ngdoc overview
  * @name childfundApp
  * @description
@@ -17,7 +24,10 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'datatables'
+    'angularModalService',
+    'datatables',
+    'underscore',
+    'angularMoment'
   ])
   .config(function ( $stateProvider,$urlRouterProvider) {
 
@@ -72,7 +82,7 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/programs.html',
+            templateUrl: 'views/program/programs.html',
             controller: 'ProgramsCtrl'    
           }         
         }
@@ -82,7 +92,7 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/projects.html',
+            templateUrl: 'views/project/projects.html',
             controller: 'ProjectsCtrl'    
           }         
         }
@@ -92,7 +102,7 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/activities.html',
+            templateUrl: 'views/activity/activity.html',
             controller: 'ActivityCtrl'    
           }         
         }
@@ -102,7 +112,7 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/receipts.html',
+            templateUrl: 'views/receipt/receipts.html',
             controller: 'ReceiptsCtrl'    
           }         
         }
@@ -112,7 +122,7 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/payments.html',
+            templateUrl: 'views/payment/payments.html',
             controller: 'PaymentsCtrl'    
           }         
         }
@@ -122,7 +132,7 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/budgets.html',
+            templateUrl: 'views/budget/budgets.html',
             controller: 'BudgetsCtrl'    
           }         
         }
@@ -132,10 +142,11 @@ angular
         parent:'index',
         views:{
           'layoutContainer@index':{
-            templateUrl: 'views/reports.html',
+            templateUrl: 'views/report/reports.html',
             controller: 'ReportsCtrl'    
           }         
         }
        })
       ;  
   });
+
