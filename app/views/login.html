@@ -1,13 +1,29 @@
 <div class="jumbotron row">
+
+
   <form name="LoginForm" novalidate ng-submit="login()" class="form-signin">
-    <h2 class="form-signin-heading text-muted">Login</h2>
+    <div class='login_header'>
+        <img src='../images/ChildFund.png'/>
+    </div>
+    <h2 class="form-signin-heading text-muted">Sing-in to login</h2>
     <div class="login-block">
+      <div class='form-img'>
+        <img src='../images/avatar_2x.png'/>
+      </div>
       <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
-      <input type="text" ng-model="auth.email" class="form-control" placeholder="Email" required autofocus>
-      <input type="password" ng-model="auth.password" class="form-control" placeholder="password" required>
-      <button class="btn btn-primary" type="submit">Ok</button>
+      <div class='form-item form-input-text'>
+        <span class='form-icon fa fa-user'> &nbsp; </span>
+        <input type="text" ng-model="auth.email" class="form-control" placeholder="Email" required autofocus>
+      </div>
+      <div class='form-item form-input form-input-password'>
+        <span class='form-icon fa  fa-unlock-alt '> &nbsp; </span>
+        <input type="password" ng-model="auth.password" class="form-control" placeholder="password" required>
+      </div>
+      <div class='form-item form-button form-button-submit'>
+        <button class="btn btn-primary" type="submit">Ok</button>
+      </div>
       <!-- <a class="btn btn-lg btn-primary btn-block" href="/auth/facebook">{{'LOGIN_FORM_LOGIN_WITH_FACEBOOK'|translate}} </a> -->
       <!-- <a class="btn btn-lg btn-info btn-block" ui-sref="register">{{'REGISTRATION_FORM_REGISTER'|translate}}</a> -->
-    </div>      
-  </form>  
+    </div>
+  </form>
 </div>
