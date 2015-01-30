@@ -55,6 +55,34 @@ body {
   font-weight: normal;
 }
 
+
+/*ul.sidebar .programs .menu-icon {
+  color: #009;
+}
+
+ul.sidebar .projects .menu-icon {
+  color: #606;
+}
+
+ul.sidebar .activities .menu-icon {
+  color: #F0F;
+}
+
+ul.sidebar .receipts .menu-icon {
+  color: #0F0;
+}
+
+ul.sidebar .payments .menu-icon {
+  color: #F60;
+}
+
+ul.sidebar .budgets .menu-icon {
+  color: #F00;
+}
+
+ul.sidebar .reports .menu-icon {
+  color: #630;
+}*/
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -116,6 +144,57 @@ body {
   width: 150px;
   border-radius: 100px;
 }
+
+.widget-menu .comment {
+  font-size: 20px;
+  line-height: 65px;
+  color:#fff;
+}
+
+.widget-menu .widget-body {
+  padding: 0;
+}
+
+.widget-menu .widget-icon {
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.widget-content a {
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.programs .widget-content a {
+  background-color: #000099;
+}
+
+.projects .widget-content a {
+  background-color: #660066;
+}
+
+.activities .widget-content a {
+  background-color: #FF00FF;
+}
+
+.receipts .widget-content a {
+  background-color: #00FF00;
+}
+
+.payments .widget-content a {
+  background-color: #FF6600;
+}
+
+.budgets .widget-content a {
+  background-color: #FF0000;
+}
+
+.reports .widget-content a {
+  background-color: #663300;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */

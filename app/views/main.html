@@ -1,5 +1,138 @@
 <div class="row">
-  <div class="col-lg-12">
+  <div class='col-lg-6'>
+    <div class="row">
+      <div class="col-md-6 col-xs-12 widget-menu programs">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='programs'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="comment ng-scope"> Programs </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+      <div class="col-md-6 col-xs-12 widget-menu projects">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='projects'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-suitcase"></i>
+                    </div>
+                    <div class="comment ng-scope"> Projects </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+      <div class="col-md-6 col-xs-12 widget-menu activities">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='activities'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-tasks"></i>
+                    </div>
+                    <div class="comment ng-scope"> Activities </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+      <div class="col-md-6 col-xs-12 widget-menu receipts">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='receipts'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="comment ng-scope"> Receipts </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+
+      <div class="col-md-6 col-xs-12 widget-menu payments">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='payments'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-cc-mastercard"></i>
+                    </div>
+                    <div class="comment ng-scope"> Payments </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+
+      <div class="col-md-6 col-xs-12 widget-menu budgets">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='budgets'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-money"></i>
+                    </div>
+                    <div class="comment ng-scope"> Budgets </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+
+      <div class="col-md-6 col-xs-12 widget-menu reports">
+        <rd-widget>
+          <div class="widget" ng-transclude="">
+            <rd-widget-body class="ng-scope ng-isolate-scope">
+              <div class="widget-body" ng-class="classes">
+                <div ng-hide="loading" class="widget-content" ng-transclude="">
+                  <a ui-sref='reports'>
+                    <div class="widget-icon pull-left ng-scope">
+                      <i class="fa fa-archive"></i>
+                    </div>
+                    <div class="comment ng-scope"> Reports </div>
+                  </a>
+                </div>
+              </div>
+            </rd-widget-body>
+          </div>
+        </rd-widget>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
     <ca-widget>
       <widget-header icon="fa-tasks" title="Activities">
         <a href="#">Manage</a>
@@ -7,8 +140,8 @@
       <widget-body classes="medium no-padding">
         <div class="table-responsive">
           <table datatable="" dt-options="dashboard.dtOptions" dt-columns="dashboard.dtColumns" class="row-border hover"></table>
-        </div>      
-      </widget-body>    
+        </div>
+      </widget-body>
     </ca-widget>
   </div>
 </div>
