@@ -45,7 +45,7 @@ angular
           }
         }
       })
-     // HOME STATES AND NESTED VIEWS ============================================================
+     // HOME STATES AND NESTED VIEWS ========================================
       .state('home',{
         url:'/home',
         parent:'index',
@@ -57,7 +57,7 @@ angular
         }
       })
 
-    // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================================
+    // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
       .state('about', {
         url:'/about',
         parent:'index',
@@ -68,7 +68,7 @@ angular
           }
         }
       })
-    // LOGIN/ REGISTRATION PAGE AND MULTIPLE NAMED VIEWS =================================================
+    // LOGIN/ REGISTRATION PAGE AND MULTIPLE NAMED VIEWS =================================
       .state('login', {
         url: '/login',
         views:{
@@ -118,7 +118,7 @@ angular
              var programPromise = $q.defer();
              program.getData(function(data) {
                var Program = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                programPromise.resolve(Program);
              });
@@ -145,7 +145,7 @@ angular
              var programPromise = $q.defer();
              program.getData(function(data) {
                var Program = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                programPromise.resolve(Program);
              });
@@ -196,7 +196,7 @@ angular
              var projectPromise = $q.defer();
              project.getData(function(data) {
                var Project = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                projectPromise.resolve(Project);
              });
@@ -223,7 +223,7 @@ angular
              var projectPromise = $q.defer();
              project.getData(function(data) {
                var Project = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                projectPromise.resolve(Project);
              });
@@ -273,7 +273,7 @@ angular
              var activitysPromise = $q.defer();
              activity.getData(function(data) {
                var Activity = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                activitysPromise.resolve(Activity);
              });
@@ -299,7 +299,7 @@ angular
              var activitysPromise = $q.defer();
              activity.getData(function(data) {
                var Activity = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                activitysPromise.resolve(Activity);
              });
@@ -349,7 +349,7 @@ angular
              var ReceiptsPromise = $q.defer();
              receipt.getData(function(data) {
                var Receipt = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                ReceiptsPromise.resolve(Receipt);
              });
@@ -375,7 +375,7 @@ angular
              var ReceiptsPromise = $q.defer();
              receipt.getData(function(data) {
                var Receipt = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                ReceiptsPromise.resolve(Receipt);
              });
@@ -425,7 +425,7 @@ angular
              var PaymentsPromise = $q.defer();
              payment.getData(function(data) {
                var Payment = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                PaymentsPromise.resolve(Payment);
              });
@@ -451,7 +451,7 @@ angular
              var PaymentsPromise = $q.defer();
              payment.getData(function(data) {
                var Payment = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                PaymentsPromise.resolve(Payment);
              });
@@ -501,7 +501,7 @@ angular
              var BudgetsPromise = $q.defer();
              budget.getData(function(data) {
                var Budget = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                BudgetsPromise.resolve(Budget);
              });
@@ -527,7 +527,7 @@ angular
              var BudgetsPromise = $q.defer();
              budget.getData(function(data) {
                var Budget = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                BudgetsPromise.resolve(Budget);
              });
@@ -577,7 +577,7 @@ angular
              var ReportsPromise = $q.defer();
              report.getData(function(data) {
                var Report = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                ReportsPromise.resolve(Report);
              });
@@ -603,7 +603,7 @@ angular
              var ReportsPromise = $q.defer();
              report.getData(function(data) {
                var Report = _.find(data, function (item) {
-                 return item._id === $stateParams.id;
+                 return item._id == $stateParams.id;
                });
                ReportsPromise.resolve(Report);
              });

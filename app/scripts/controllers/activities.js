@@ -21,9 +21,8 @@ angular.module('childfundApp')
     }
     // $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
 
-    //activity.getData().$promise.then(function(data) {
-    //    $scope.activities = data;
-    //});
+
+
 
 
     $scope.show = function() {
