@@ -8,18 +8,25 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ActivityCtrl',['$scope','activity','ModalService','_','moment', function ($scope,activity,ModalService,_,moment) {
-     var vm = this;
-    vm.activities = [];
-    vm.activity = {};
-    // vm.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
-    
-    activity.getData().$promise.then(function(data) {
-        vm.activities = data;
-    });
+  .controller('ActivityCtrl',['$scope','activity','ModalService','_','moment','activityS','activityItem', function ($scope,activity,ModalService,_,moment,activityS,activityItem) {
+    if(activityS){
+      $scope.activities = activityS;
+    }else{
+      $scope.activities=[];
+    }
+    if(activityItem){
+      $scope.activity =  activityItem;
+    }else{
+      $scope.activity = {};
+    }
+    // $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
+
+    //activity.getData().$promise.then(function(data) {
+    //    $scope.activities = data;
+    //});
 
 
-    vm.show = function() {
+    $scope.show = function() {
         ModalService.showModal({
             templateUrl: 'views/activity/new.html',
             controller: 'ModalCtrl',
@@ -30,20 +37,30 @@ angular.module('childfundApp')
             modal.element.modal();
             modal.close.then(function(result) {
                 if (result) {
-                  vm.create(result);
-                  vm.activities.push(vm.activity);
-                }              
+                  $scope.create(result);
+                  $scope.activities.push($scope.activity);
+                }
             });
         });
     };
 
-    vm.create=function(activity){
-      vm.activity.name = activity.name;
-      vm.activity.description = activity.description;
-      vm.activity.status = activity.status;
-      vm.activity.projectid = activity.projectid;
-      vm.activity.createdBy = 'neo';
-      vm.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+    $scope.create=function(activity){
+      $scope.activity.name = activity.name;
+      $scope.activity.description = activity.description;
+      $scope.activity.status = activity.status;
+      $scope.activity.projectid = activity.projectid;
+      $scope.activity.createdBy = 'neo';
+      $scope.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
     };
-    
+
+    $scope.update=function(activity){
+      $scope.activity._id = activity._id;
+      $scope.activity.name = activity.name;
+      $scope.activity.description = activity.description;
+      $scope.activity.status = activity.status;
+      $scope.activity.projectid = activity.projectid;
+      $scope.activity.createdBy = activity.createdBy;
+      $scope.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+    };
+
   }]);

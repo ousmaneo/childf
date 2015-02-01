@@ -1,10 +1,10 @@
-<div ng-controller="ProjectsCtrl as Project">
+
   <div class="row">
     <div class="col-lg-12">
       <ca-widget>
         <widget-header icon="fa-tasks" title="Project">
           <a href="#">Manage</a>
-          <a href="" class="btn btn-primary" ng-click="Project.show()">Create</a>
+          <a href="" class="btn btn-primary" ng-click="show()">Create</a>
         </widget-header>
         <widget-body classes="medium no-padding">
           <div class="table-responsive">
@@ -17,22 +17,23 @@
                 <td>Program</td>
                 <td>Status</td>
                 <td>Created By</td>
-                <td>Modified by</td>
                 <td>Created Date</td>
-                <td>Modified Date</td>
+                <td>Actions</td>
               </tr>
               </thead>
               <tbody>
-              <tr ng-repeat="project in Project.projects">
+              <tr ng-repeat="project in projects">
                 <td>{{project._id}}</td>
                 <td>{{project.name}}</td>
                 <td>{{project.description}}</td>
                 <td>{{project.programid}}</td>
                 <td>{{project.status ? 'Active' : 'Inactive'}}</td>
                 <td>{{project.createdBy}}</td>
-                <td>{{project.modifiedBy}}</td>
                 <td>{{project.createdDate}}</td>
-                <td>{{project.modifiedDate}}</td>
+                <td>
+                  <a ui-sref="viewProject({id:project._id})"><i class="fa fa-search"></i></a>
+                  <a ui-sref="editProject({id:project._id})" ><i class="fa fa-pencil-square-o"></i></a>
+                </td>
               </tr>
               </tbody>
             </table>
@@ -41,4 +42,4 @@
       </ca-widget>
     </div>
   </div>
-</div>
+

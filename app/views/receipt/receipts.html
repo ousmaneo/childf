@@ -1,1 +1,45 @@
-<p>This is the receipts view.</p>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <ca-widget>
+        <widget-header icon="fa-tasks" title="Receipts">
+          <a href="#">Manage</a>
+          <a href="" class="btn btn-primary" ng-click="show()">Create</a>
+        </widget-header>
+        <widget-body classes="medium no-padding">
+          <div class="table-responsive">
+            <table datatable="ng"  class="row-border hover">
+              <thead>
+              <tr>
+                <td>Id</td>
+                <td>title</td>
+                <td>Description</td>
+                <td>Account</td>
+                <td>Amount</td>
+                <td>Bank Account</td>
+                <td>Receipt Date</td>
+                <td>Actions</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="receipt in receipts">
+                <td>{{receipt._id}}</td>
+                <td>{{receipt.title}}</td>
+                <td>{{receipt.description}}</td>
+                <td>{{receipt.accountId}}</td>
+                <td>{{receipt.amount}}</td>
+                <td>{{receipt.bankAccount}}</td>
+                <td>{{receipt.receiptDate}}</td>
+                <td>
+                  <a ui-sref="viewReceipt({id:receipt._id})"><i class="fa fa-search"></i></a>
+                  <a ui-sref="editReceipt({id:receipt._id})" ><i class="fa fa-pencil-square-o"></i></a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </widget-body>
+      </ca-widget>
+    </div>
+  </div>
+

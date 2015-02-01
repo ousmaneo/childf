@@ -1,0 +1,65 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title">{{title}}</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" role="form" name="newReceipt">
+    <div class="form-group">
+      <label for="name" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" placeholder="Title Name" ng-model="receipt.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+        <textarea name="description" id="" cols="30" rows="3" class="form-control" ng-model="receipt.description"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="account" class="col-sm-2 control-label">Account</label>
+      <div class="col-sm-10">
+        <input type="number" name="account" id="account" class="form-control" value="" required="required" ng-model="receipt.accountId">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="amount" class="col-sm-2 control-label">Amount</label>
+
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="amount" placeholder="Amount" ng-model="receipt.amount">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="bankAccount" class="col-sm-2 control-label">Bank Account</label>
+      <div class="col-sm-10">
+        <input type="number" name="bankAccount" id="bankAccount" class="form-control" value="" required="required" ng-model="receipt.bankAccount">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fundsource" class="col-sm-2 control-label">Fund source</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="fundsource" placeholder="Fund source" ng-model="receipt.fundSource">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="documentType" class="col-sm-2 control-label">Document Type</label>
+
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="documentType" placeholder="DocumentType" ng-model="receipt.documentType">
+      </div>
+    </div>
+    <div class="form-group"ng-class="{'has-error': datepickerForm.date.$invalid}">
+      <label for="receiptDate" class="col-sm-2 control-label">Receipt Date</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="receipt.receiptDate" name="date" bs-datepicker>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" ng-click="close(receipt)" class="btn btn-primary" data-dismiss="modal">OK</button>
+  <button type="button" ng-click="cancel()" class="btn">Cancel</button>
+</div>

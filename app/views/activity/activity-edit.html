@@ -1,0 +1,49 @@
+<ca-widget>
+  <widget-header icon="fa-tasks" title="Activity Name : {{activity.name|uppercase}}">
+    <a ui-sref="editActivty({id:activity._id})" ><i class="fa fa-pencil-square-o"></i></a>
+    <a ui-sref="removeActivity({id:activity._id})" ><i class="fa fa-trash-o"></i></a>
+  </widget-header>
+  <widget-body classes="medium no-padding">
+  <form class="form-horizontal" role="form" name="updateactivity">
+    <input type="hidden" name="name" id="inputID" class="form-control" value="{{activity._id}}" title="" required="required" >
+    <div class="form-group">
+      <label for="name" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" required ="required" placeholder="Activity Name" ng-model="activity.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+        <textarea name="description" id="" cols="30" rows="3" class="form-control" ng-model="activity.description"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="project" class="col-sm-2 control-label">Project</label>
+      <div class="col-sm-10">
+        <input type="number" name="projectid" id="inputProjectid" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="activity.projectid">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="radio" class="col-sm-2 control-label">Status</label>
+      <div class="col-sm-10">
+        <div class="radio">
+          <label>
+            <input type="radio" name="status" id="inputStatus" value="1" checked="checked" ng-model ="activity.status">
+            Active
+          </label>
+          <label>
+            <input type="radio" name="status" id="inputStatus" value="0" checked="checked" ng-model ="activity.status">
+            Inactive
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+    </widget-body>
+  </ca-widget>
+<div class="modal-footer">
+  <button type="button" ng-click="update(activity)" class="btn btn-primary" data-dismiss="modal">OK</button>
+  <button type="button" ng-click="cancel()" class="btn">Cancel</button>
+</div>
