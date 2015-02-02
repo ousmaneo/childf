@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ActivityCtrl',['$scope','activity','ModalService','_','moment','activityS','activityItem', function ($scope,activity,ModalService,_,moment,activityS,activityItem) {
+  .controller('ActivityCtrl',['$scope','activity','ModalService','_','moment','activityS','activityItem','$state', function ($scope,activity,ModalService,_,moment,activityS,activityItem,$state) {
     if(activityS){
       $scope.activities = activityS;
     }else{
@@ -44,22 +44,26 @@ angular.module('childfundApp')
     };
 
     $scope.create=function(activity){
-      $scope.activity.name = activity.name;
-      $scope.activity.description = activity.description;
-      $scope.activity.status = activity.status;
-      $scope.activity.projectid = activity.projectid;
-      $scope.activity.createdBy = 'neo';
-      $scope.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
-    };
+      //$scope.activity.name = activity.name;
+      //$scope.activity.description = activity.description;
+      //$scope.activity.status = activity.status;
+      //$scope.activity.projectid = activity.projectid;
+      //$scope.activity.createdBy = 'neo';
+      //$scope.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
 
+    };
+    $scope.cancel= function () {
+      $state.go('activities');
+    }
     $scope.update=function(activity){
-      $scope.activity._id = activity._id;
-      $scope.activity.name = activity.name;
-      $scope.activity.description = activity.description;
-      $scope.activity.status = activity.status;
-      $scope.activity.projectid = activity.projectid;
-      $scope.activity.createdBy = activity.createdBy;
-      $scope.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      //$scope.activity._id = activity._id;
+      //$scope.activity.name = activity.name;
+      //$scope.activity.description = activity.description;
+      //$scope.activity.status = activity.status;
+      //$scope.activity.projectid = activity.projectid;
+      //$scope.activity.createdBy = activity.createdBy;
+      //$scope.activity.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $state.go('activities');
     };
 
   }]);

@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ProjectsCtrl',['$scope','project','ModalService','_','moment','projectS','projectItem', function ($scope,project,ModalService,_,moment,projectS,projectItem) {
+  .controller('ProjectsCtrl',['$scope','project','ModalService','_','moment','projectS','projectItem','$state', function ($scope,project,ModalService,_,moment,projectS,projectItem,$state) {
     if(projectS){
       $scope.projects = projectS;
     }else{
@@ -45,22 +45,27 @@ angular.module('childfundApp')
     };
 
     $scope.create = function(project){
-      $scope.project.name = project.name;
-      $scope.project.description = project.description;
-      $scope.project.programid = project.programid;
-      $scope.project.status = project.status;
-      $scope.project.createdBy = 'neo';
-      $scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      //$scope.project.name = project.name;
+      //$scope.project.description = project.description;
+      //$scope.project.programid = project.programid;
+      //$scope.project.status = project.status;
+      //$scope.project.createdBy = 'neo';
+      //$scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+
     };
 
+    $scope.cancel= function () {
+      $state.go('projects');
+    }
     $scope.update = function(project){
-      console.log(project);
-      $scope.project._id = project._id;
-      $scope.project.name = project.name;
-      $scope.project.description = project.description;
-      $scope.project.programid = project.programid;
-      $scope.project.status = project.status;
-      $scope.project.createdBy = 'neo';
-      $scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      //console.log(project);
+      //$scope.project._id = project._id;
+      //$scope.project.name = project.name;
+      //$scope.project.description = project.description;
+      //$scope.project.programid = project.programid;
+      //$scope.project.status = project.status;
+      //$scope.project.createdBy = 'neo';
+      //$scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $state.go('projects')
     };
   }]);

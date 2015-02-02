@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('PaymentsCtrl',['$scope','payment','ModalService','_','moment','paymentS','paymentItem', function ($scope,payment,ModalService,_,moment,paymentS,paymentItem) {
+  .controller('PaymentsCtrl',['$scope','payment','ModalService','_','moment','paymentS','paymentItem','$state', function ($scope,payment,ModalService,_,moment,paymentS,paymentItem,$state) {
     if(paymentS){
       $scope.payments = paymentS;
     }else{
@@ -45,25 +45,31 @@ angular.module('childfundApp')
     };
 
     $scope.create=function(payment){
-      $scope.payment.title = payment.title;
-      $scope.payment.description = payment.description;
-      $scope.payment.accountId = payment.accountId;
-      $scope.payment.fiscalYear = payment.fiscalYear;
-      $scope.payment.fundSource = payment.fundSource;
-      $scope.payment.status = payment.status;
-      $scope.payment.createdBy = 'neo';
-      $scope.payment.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      //$scope.payment.title = payment.title;
+      //$scope.payment.description = payment.description;
+      //$scope.payment.accountId = payment.accountId;
+      //$scope.payment.fiscalYear = payment.fiscalYear;
+      //$scope.payment.fundSource = payment.fundSource;
+      //$scope.payment.status = payment.status;
+      //$scope.payment.createdBy = 'neo';
+      //$scope.payment.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+
     };
+
+    $scope.cancel= function () {
+      $state.go('payments');
+    }
     $scope.update=function(payment){
-      console.log(payment);
-      $scope.payment._id = payment._id;
-      $scope.payment.title = payment.title;
-      $scope.payment.description = payment.description;
-      $scope.payment.accountId = payment.accountId;
-      $scope.payment.fiscalYear = payment.fiscalYear;
-      $scope.payment.fundSource = payment.fundSource;
-      $scope.payment.status = payment.status;
-      $scope.payment.createdBy = 'neo';
-      $scope.payment.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      //console.log(payment);
+      //$scope.payment._id = payment._id;
+      //$scope.payment.title = payment.title;
+      //$scope.payment.description = payment.description;
+      //$scope.payment.accountId = payment.accountId;
+      //$scope.payment.fiscalYear = payment.fiscalYear;
+      //$scope.payment.fundSource = payment.fundSource;
+      //$scope.payment.status = payment.status;
+      //$scope.payment.createdBy = 'neo';
+      //$scope.payment.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $state.go('payments');
     };
   }]);

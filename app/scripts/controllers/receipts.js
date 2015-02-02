@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ReceiptsCtrl',['$scope','receipt','ModalService','_','moment','receiptS','receiptItem', function ($scope,receipt,ModalService,_,moment,receiptS,receiptItem) {
+  .controller('ReceiptsCtrl',['$scope','receipt','ModalService','_','moment','receiptS','receiptItem','$state', function ($scope,receipt,ModalService,_,moment,receiptS,receiptItem,$state) {
     //var $scope = this;
     //$scope.receipts = [];
     //$scope.receipt = {};
@@ -48,29 +48,34 @@ angular.module('childfundApp')
     };
 
     $scope.create=function(receipt){
-      $scope.receipt.title = receipt.title;
-      $scope.receipt.description = receipt.description;
-      $scope.receipt.accountId = receipt.accountId;
-      $scope.receipt.bankAccount = receipt.bankAccount;
-      $scope.receipt.amount = receipt.amount;
-      $scope.receipt.fundSource = receipt.fundSource;
-      $scope.receipt.documentType = receipt.documentType;
-      $scope.receipt.receiptDate = receipt.receiptDate;
-      $scope.receipt.createdBy = 'neo';
-      $scope.receipt.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
-    };
+      //$scope.receipt.title = receipt.title;
+      //$scope.receipt.description = receipt.description;
+      //$scope.receipt.accountId = receipt.accountId;
+      //$scope.receipt.bankAccount = receipt.bankAccount;
+      //$scope.receipt.amount = receipt.amount;
+      //$scope.receipt.fundSource = receipt.fundSource;
+      //$scope.receipt.documentType = receipt.documentType;
+      //$scope.receipt.receiptDate = receipt.receiptDate;
+      //$scope.receipt.createdBy = 'neo';
+      //$scope.receipt.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
 
-    $scope.create=function(receipt){
-      $scope.receipt._id = receipt._id;
-      $scope.receipt.title = receipt.title;
-      $scope.receipt.description = receipt.description;
-      $scope.receipt.accountId = receipt.accountId;
-      $scope.receipt.bankAccount = receipt.bankAccount;
-      $scope.receipt.amount = receipt.amount;
-      $scope.receipt.fundSource = receipt.fundSource;
-      $scope.receipt.documentType = receipt.documentType;
-      $scope.receipt.receiptDate = receipt.receiptDate;
-      $scope.receipt.createdBy = 'neo';
-      $scope.receipt.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+
+    };
+    $scope.cancel= function () {
+      $state.go('receipts');
+    }
+    $scope.update=function(receipt){
+      //$scope.receipt._id = receipt._id;
+      //$scope.receipt.title = receipt.title;
+      //$scope.receipt.description = receipt.description;
+      //$scope.receipt.accountId = receipt.accountId;
+      //$scope.receipt.bankAccount = receipt.bankAccount;
+      //$scope.receipt.amount = receipt.amount;
+      //$scope.receipt.fundSource = receipt.fundSource;
+      //$scope.receipt.documentType = receipt.documentType;
+      //$scope.receipt.receiptDate = receipt.receiptDate;
+      //$scope.receipt.createdBy = 'neo';
+      //$scope.receipt.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $state.go('receipts');
     };
   }]);
