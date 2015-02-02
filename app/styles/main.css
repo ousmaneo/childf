@@ -177,23 +177,6 @@ body {
   background-color: #607d8b;
 }
 
-
-.main-activities .widget{
-  background-color: #738BC0;
-  border: 1px solid #30426A;
-}
-
-.main-activities .widget .widget-header {
-  background-color: #2D3E63;
-  border-bottom: none;
-}
-
-.main-activities .widget .widget-header,
-.main-activities .widget .widget-header i,
-.main-activities .widget .widget-header a{
-  color: #fff;
-}
-
 .dataTables_wrapper {
   background-color: #30426A;
   width: 100% !important;
