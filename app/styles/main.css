@@ -204,10 +204,30 @@ body {
   color: #fff;
 }
 
+.dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_filter label{
+  font-weight: normal;
+}
+
+.dataTables_wrapper .dataTables_length label select{
+  color: #333;
+}
+
 .dataTables_wrapper .dataTables_filter {
   padding: 10px 10px 10px 0;
   color: #fff;
 }
+
+.dataTables_wrapper .dataTables_filter input[type=search] {
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: #333;
+  font-weight: normal;
+  font-size: 12px !important;
+  padding: 5px 0 5px 5px;
+}
+
+
 
 .dataTables_wrapper table {
   width: 100% !important;
