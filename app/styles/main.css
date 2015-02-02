@@ -56,33 +56,7 @@ body {
 }
 
 
-/*ul.sidebar .programs .menu-icon {
-  color: #009;
-}
 
-ul.sidebar .projects .menu-icon {
-  color: #606;
-}
-
-ul.sidebar .activities .menu-icon {
-  color: #F0F;
-}
-
-ul.sidebar .receipts .menu-icon {
-  color: #0F0;
-}
-
-ul.sidebar .payments .menu-icon {
-  color: #F60;
-}
-
-ul.sidebar .budgets .menu-icon {
-  color: #F00;
-}
-
-ul.sidebar .reports .menu-icon {
-  color: #630;
-}*/
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -145,10 +119,12 @@ ul.sidebar .reports .menu-icon {
   border-radius: 100px;
 }
 
+
 .widget-menu .comment {
   font-size: 20px;
   line-height: 65px;
-  color:#fff;
+  color: #B2BFDC;
+
 }
 
 .widget-menu .widget-body {
@@ -157,7 +133,11 @@ ul.sidebar .reports .menu-icon {
 
 .widget-menu .widget-icon {
   background: transparent;
-  border: 1px solid #fff;
+  /*border: 1px solid #fff;*/
+}
+
+.widget-menu .widget-icon i{
+  color: #fff;
 }
 
 .widget-content a {
@@ -165,34 +145,137 @@ ul.sidebar .reports .menu-icon {
   display: block;
   text-decoration: none;
   cursor: pointer;
+  background-color: #30426A;
+  color: #B2BFDC;
 }
 
-.programs .widget-content a {
-  background-color: #000099;
+.programs .widget-content .widget-icon {
+  background-color: #2196f3;
 }
 
-.projects .widget-content a {
-  background-color: #660066;
+.projects .widget-content .widget-icon {
+  background-color: #673ab7;
 }
 
-.activities .widget-content a {
-  background-color: #FF00FF;
+.activities .widget-content .widget-icon {
+  background-color: #ffc107;
 }
 
-.receipts .widget-content a {
-  background-color: #00FF00;
+.receipts .widget-content .widget-icon {
+  background-color: #8bc34a;
 }
 
-.payments .widget-content a {
-  background-color: #FF6600;
+.payments .widget-content .widget-icon {
+  background-color: #ff9800;
 }
 
-.budgets .widget-content a {
-  background-color: #FF0000;
+.budgets .widget-content .widget-icon {
+  background-color: #795548;
 }
 
-.reports .widget-content a {
-  background-color: #663300;
+.reports .widget-content .widget-icon {
+  background-color: #607d8b;
+}
+
+
+.main-activities .widget{
+  background-color: #738BC0;
+  border: 1px solid #30426A;
+}
+
+.main-activities .widget .widget-header {
+  background-color: #2D3E63;
+  border-bottom: none;
+}
+
+.main-activities .widget .widget-header,
+.main-activities .widget .widget-header i,
+.main-activities .widget .widget-header a{
+  color: #fff;
+}
+
+.dataTables_wrapper {
+  background-color: #30426A;
+  width: 100% !important;
+}
+
+.dataTables_wrapper .dataTables_length {
+  padding: 10px 0 10px 10px;
+  color: #fff;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  padding: 10px 10px 10px 0;
+  color: #fff;
+}
+
+.dataTables_wrapper table {
+  width: 100% !important;
+  border: none;
+}
+
+.dataTables_wrapper table thead {
+  background-color: #738BC0 !important;
+
+}
+
+.dataTables_wrapper table thead th{
+  font-weight: normal;
+  color: #fff;
+  font-size: 13px !important;
+  padding-left: 5px;
+  border-left: 1px solid #fff;
+  border-bottom: none;
+}
+
+.dataTables_wrapper table thead th:first-child {
+  padding-left: 10px;
+  border-left: none;
+}
+
+.dataTables_wrapper table thead th:last-child {
+  padding-right: 10px;
+
+}
+
+.dataTables_wrapper table tbody td,
+.dataTables_wrapper table tbody th {
+  border: 0px solid !important;
+}
+
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_info {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #fff;
+  font-weight: normal;
+  line-height: 30px;
+  font-size: 11px;
+}
+
+.dataTables_wrapper .dataTables_info {
+  padding-left: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  line-height: 13px;
+  padding-right: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate a.disabled {
+  display: none;
+}
+
+
+.dataTables_wrapper .dataTables_paginate a {
+  background: url() 0 0 no-repeat #738BC0;
+  margin-left: 5px !important;
+
+}
+
+.dataTables_wrapper .dataTables_paginate span span {
+  margin: 0 5px;
+  letter-spacing: 1.2em;
 }
 
 /* Responsive: Portrait tablets and up */
