@@ -222,7 +222,8 @@ body {
 
 }
 
-.dataTables_wrapper table thead th{
+.dataTables_wrapper table thead th,
+.dataTables_wrapper table thead td{
   font-weight: normal;
   color: #fff;
   font-size: 13px !important;
