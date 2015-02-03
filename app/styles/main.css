@@ -4,6 +4,31 @@ body {
   /*padding-bottom: 20px;*/
 }
 
+a, a:link, a:visited {
+  color: #7cb342;
+}
+
+a:hover {
+  color:#aed581;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: #7cb342;
+  border: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff !important;
+  background-color: #aed581;
+  border: none;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -79,7 +104,6 @@ body {
   width: 350px;
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  /*box-shadow: inset 0 0 1em gold, 0 0 1em red;*/
   margin: 0px auto 25px;
 }
 
@@ -121,9 +145,9 @@ body {
 
 
 .widget-menu .comment {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 65px;
-  color: #B2BFDC;
+  color: #fff;
 
 }
 
@@ -145,7 +169,7 @@ body {
   display: block;
   text-decoration: none;
   cursor: pointer;
-  background-color: #30426A;
+  background-color: #689f38;
   color: #B2BFDC;
 }
 
@@ -162,7 +186,7 @@ body {
 }
 
 .receipts .widget-content .widget-icon {
-  background-color: #8bc34a;
+  background-color: #7986cb;
 }
 
 .payments .widget-content .widget-icon {
@@ -178,7 +202,7 @@ body {
 }
 
 .dataTables_wrapper {
-  background-color: #30426A;
+  background-color: #689f38;
   width: 100% !important;
 }
 
@@ -214,11 +238,11 @@ body {
 
 .dataTables_wrapper table {
   width: 100% !important;
-  border: none;
+  border: none !important;
 }
 
 .dataTables_wrapper table thead {
-  background-color: #738BC0 !important;
+  background-color: #8bc34a !important;
 
 }
 
@@ -249,7 +273,7 @@ body {
 
 .dataTables_wrapper table tbody td a {
   background: none;
-  color: #738BC0;
+  color: #8bc34a;
   padding: 10px;
 }
 
@@ -282,7 +306,7 @@ body {
 
 
 .dataTables_wrapper .dataTables_paginate a {
-  background: url() 0 0 no-repeat #738BC0;
+  background: url() 0 0 no-repeat #8bc34a;
   margin-left: 5px !important;
 
 }
@@ -291,6 +315,74 @@ body {
   margin: 0 5px;
   letter-spacing: 1.2em;
 }
+
+
+/* Modal */
+
+.modal-dialog .modal-content {
+  background-color: #689f38;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+
+}
+
+.modal-dialog .modal-content .modal-header {
+  background-color: #689f38;
+  border-bottom: 0px none;
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-dialog .modal-content .modal-header .close {
+  border-radius: 74px;
+  width: 25px;
+  height: 25px;
+  padding: 3px 0px;
+  z-index: 1000;
+  color: #fff;
+  background-color: #000;
+}
+
+.modal-dialog .modal-content .modal-footer{
+  background-color: #689f38;
+  border-top: 0px none;
+  border-radius: 0 0 5px 5px;
+}
+
+
+.modal-dialog .modal-content .modal-body {
+
+}
+
+
+/* sidebar */
+
+#sidebar-wrapper {
+  background: none repeat scroll 0% 0% #8bc34a;
+  color: #fff;
+}
+
+#sidebar-wrapper .sidebar-main a,
+#sidebar-wrapper .sidebar-footer {
+  background: none repeat scroll 0% 0% #689f38;
+  color: #fff;
+}
+
+#sidebar-wrapper .sidebar-title {
+  display: none;
+}
+
+#sidebar-wrapper a{
+  color: #fff;
+}
+
+
+#sidebar-wrapper a:hover{
+  color: #fff;
+  border: 3px solid #689F38;
+  background-color: #689F38;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
