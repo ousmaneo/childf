@@ -78,6 +78,85 @@ angular
           }
         }
       })
+       .state('accounts', {
+         url: '/accounts',
+         parent:'index',
+         resolve:{
+           accountS :function ($stateParams, account,$q) {
+
+             var accountsPromise = $q.defer();
+             account.getData(function(data) {
+               accountsPromise.resolve(data);
+             });
+
+             return accountsPromise.promise;
+           },
+           accountItem: function () {
+
+           }
+         },
+         views:{
+           'layoutContainer@index':{
+             templateUrl: 'views/account/accounts.html',
+             controller: 'AccountCtrl'
+           }
+         }
+
+       })
+       .state('viewAccount',{
+         url:'/account/:id/view',
+         parent:'index',
+         views:{
+           'layoutContainer@index':{
+             templateUrl:'views/account/account-view.html',
+             controller:'AccountCtrl'
+           }
+         },
+         resolve:{
+           accountItem :function ($stateParams, account,_,$q) {
+             //console.log(program);
+             var accountsPromise = $q.defer();
+             account.getData(function(data) {
+               var Account = _.find(data, function (item) {
+                 return item._id == $stateParams.id;
+               });
+               accountsPromise.resolve(Account);
+             });
+
+             return accountsPromise.promise;
+           },
+           accountS: function () {
+
+           }
+         }
+       })
+       .state('editAccount',{
+         url:'/account/:id/edit',
+         parent:'index',
+         views:{
+           'layoutContainer@index':{
+             templateUrl:'views/account/account-edit.html',
+             controller:'AccountCtrl'
+           }
+         },
+         resolve:{
+           accountItem :function ($stateParams, account,_,$q) {
+             //console.log(program);
+             var accountsPromise = $q.defer();
+             account.getData(function(data) {
+               var Account = _.find(data, function (item) {
+                 return item._id == $stateParams.id;
+               });
+               accountsPromise.resolve(Account);
+             });
+
+             return accountsPromise.promise;
+           },
+           accountS: function () {
+
+           }
+         }
+       })
        .state('programs', {
          url: '/programs',
          parent:'index',

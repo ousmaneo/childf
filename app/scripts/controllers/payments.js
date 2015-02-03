@@ -26,39 +26,52 @@ angular.module('childfundApp')
     //});
 
 
-    $scope.show = function() {
+    $scope.show = function(action) {
+
+      if(action){
+        var Payment = _.find($scope.payments, function (item) {
+          return item._id == action.id;
+        });
+      }
+
+
       ModalService.showModal({
         templateUrl: 'views/payment/new.html',
         controller: 'ModalCtrl',
         inputs: {
-          title: 'Add payment'
+          title: 'payment',
+          item:Payment
         }
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
           if (result) {
-            $scope.create(result);
-            $scope.payments.push($scope.payment);
+            if(!result._id){
+              $scope.create(result);
+              $scope.payments.push($scope.payment);
+            }else{
+              $scope.update(result)
+            }
           }
         });
       });
     };
 
     $scope.create=function(payment){
-      //$scope.payment.title = payment.title;
-      //$scope.payment.description = payment.description;
-      //$scope.payment.accountId = payment.accountId;
-      //$scope.payment.fiscalYear = payment.fiscalYear;
-      //$scope.payment.fundSource = payment.fundSource;
-      //$scope.payment.status = payment.status;
-      //$scope.payment.createdBy = 'neo';
-      //$scope.payment.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $scope.payment.title = payment.title;
+      $scope.payment.description = payment.description;
+      $scope.payment.accountId = payment.accountId;
+      $scope.payment.fiscalYear = payment.fiscalYear;
+      $scope.payment.fundSource = payment.fundSource;
+      $scope.payment.status = payment.status;
+      $scope.payment.createdBy = 'neo';
+      $scope.payment.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
 
     };
 
     $scope.cancel= function () {
       $state.go('payments');
-    }
+    };
     $scope.update=function(payment){
       //console.log(payment);
       //$scope.payment._id = payment._id;

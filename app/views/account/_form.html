@@ -3,49 +3,43 @@
   <h4 class="modal-title">{{title}}</h4>
 </div>
 <div class="modal-body">
-  <form class="form-horizontal" role="form" name="newProgram">
+  <form class="form-horizontal" role="form" name="Account">
+    <input type="hidden" name="name" id="inputID" class="form-control" value="{{account._id}}" title=""  >
     <div class="form-group">
       <label for="name" class="col-sm-2 control-label">Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" placeholder="Budget title" ng-model="budget.title">
+        <input type="text" class="form-control" id="name" placeholder="Account Name" ng-model="account.name">
       </div>
     </div>
     <div class="form-group">
       <label for="description" class="col-sm-2 control-label">Description</label>
       <div class="col-sm-10">
-        <textarea name="description" id="" cols="30" rows="3" class="form-control" ng-model="budget.description"></textarea>
+        <textarea name="description" id="" cols="30" rows="3" class="form-control" ng-model="account.description"></textarea>
       </div>
     </div>
     <div class="form-group">
       <label for="AccountId" class="col-sm-2 control-label">Project</label>
       <div class="col-sm-10">
-        <input type="number" name="accountId" id="inputAccountId" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="budget.accountId">
+        <input type="number" name="accountId" id="inputAccountId" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="account.accountId">
       </div>
     </div>
     <div class="form-group">
-      <label for="fiscalYear" class="col-sm-2 control-label">Fiscal Year</label>
+      <label for="accountType" class="col-sm-2 control-label">Account Type</label>
 
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="fiscalYear" placeholder="FiscalYear" ng-model="budget.fiscalYear">
+        <input type="text" class="form-control" id="accountType" placeholder="Account Type" ng-model="account.accountType">
       </div>
     </div>
-    <div class="form-group">
-      <label for="fundSource" class="col-sm-2 control-label">Fund Source</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="fundSource" placeholder="FundSource" ng-model="budget.fundSource">
-      </div>
-    </div>
-
     <div class="form-group">
       <label for="radio" class="col-sm-2 control-label">Status</label>
       <div class="col-sm-10">
         <div class="radio">
           <label>
-            <input type="radio" name="status" id="inputStatus" value="1" checked="checked" ng-model ="budget.status">
+            <input type="radio" name="status" id="inputStatus" value="1" checked="checked" ng-model ="account.status">
             Active
           </label>
           <label>
-            <input type="radio" name="status" id="inputStatus" value="0" checked="checked" ng-model ="budget.status">
+            <input type="radio" name="status" id="inputStatus" value="0" checked="checked" ng-model ="account.status">
             Inactive
           </label>
         </div>
@@ -54,6 +48,6 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" ng-click="close(budget)" class="btn btn-primary" data-dismiss="modal">OK</button>
+  <button type="button" ng-click="close(account)" class="btn btn-primary" data-dismiss="modal">OK</button>
   <button type="button" ng-click="cancel()" class="btn">Cancel</button>
 </div>

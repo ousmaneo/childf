@@ -26,37 +26,50 @@ angular.module('childfundApp')
     //});
 
 
-    $scope.show = function() {
-        ModalService.showModal({
-            templateUrl: 'views/project/new.html',
-            controller: 'ModalCtrl',
-            inputs: {
-              title: 'Add project'
-            }
-        }).then(function(modal) {
-            modal.element.modal();
-            modal.close.then(function(result) {
-                if (result) {
-                  $scope.create(result);
-                  $scope.projects.push($scope.project);
-                }
-            });
+    $scope.show = function(action) {
+
+      if(action){
+        var Project = _.find($scope.projects, function (item) {
+          return item._id == action.id;
         });
+      }
+
+
+      ModalService.showModal({
+        templateUrl: 'views/project/new.html',
+        controller: 'ModalCtrl',
+        inputs: {
+          title: 'project',
+          item:Project
+        }
+      }).then(function(modal) {
+        modal.element.modal();
+        modal.close.then(function(result) {
+          if (result) {
+            if(!result._id){
+              $scope.create(result);
+              $scope.projects.push($scope.project);
+            }else{
+              $scope.update(result)
+            }
+          }
+        });
+      });
     };
 
     $scope.create = function(project){
-      //$scope.project.name = project.name;
-      //$scope.project.description = project.description;
-      //$scope.project.programid = project.programid;
-      //$scope.project.status = project.status;
-      //$scope.project.createdBy = 'neo';
-      //$scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $scope.project.name = project.name;
+      $scope.project.description = project.description;
+      $scope.project.programid = project.programid;
+      $scope.project.status = project.status;
+      $scope.project.createdBy = 'neo';
+      $scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
 
     };
 
     $scope.cancel= function () {
       $state.go('projects');
-    }
+    };
     $scope.update = function(project){
       //console.log(project);
       //$scope.project._id = project._id;
@@ -66,6 +79,6 @@ angular.module('childfundApp')
       //$scope.project.status = project.status;
       //$scope.project.createdBy = 'neo';
       //$scope.project.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
-      $state.go('projects')
+      $state.go('projects');
     };
   }]);

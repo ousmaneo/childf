@@ -26,39 +26,51 @@ angular.module('childfundApp')
     //});
 
 
-    $scope.show = function() {
+    $scope.show = function(action) {
+
+      if(action){
+        var Budget = _.find($scope.budgets, function (item) {
+          return item._id == action.id;
+        });
+      }
+
+
       ModalService.showModal({
         templateUrl: 'views/budget/new.html',
         controller: 'ModalCtrl',
         inputs: {
-          title: 'Add budget'
+          title: 'budget',
+          item:Budget
         }
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
           if (result) {
-            $scope.create(result);
-            $scope.budgets.push($scope.budget);
+            if(!result._id){
+              $scope.create(result);
+              $scope.budgets.push($scope.activity);
+            }else{
+              $scope.update(result)
+            }
           }
         });
       });
     };
-
     $scope.create=function(budget){
-      //$scope.budget.title = budget.title;
-      //$scope.budget.description = budget.description;
-      //$scope.budget.accountId = budget.accountId;
-      //$scope.budget.fiscalYear = budget.fiscalYear;
-      //$scope.budget.fundSource = budget.fundSource;
-      //$scope.budget.status = budget.status;
-      //$scope.budget.createdBy = 'neo';
-      //$scope.budget.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
+      $scope.budget.title = budget.title;
+      $scope.budget.description = budget.description;
+      $scope.budget.accountId = budget.accountId;
+      $scope.budget.fiscalYear = budget.fiscalYear;
+      $scope.budget.fundSource = budget.fundSource;
+      $scope.budget.status = budget.status;
+      $scope.budget.createdBy = 'neo';
+      $scope.budget.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');
 
     };
 
     $scope.cancel= function () {
       $state.go('budgets');
-    }
+    };
     $scope.update=function(budget){
       console.log(budget);
       //$scope.budget._id = budget._id;

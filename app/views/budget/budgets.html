@@ -32,7 +32,8 @@
                 <td>{{budget.createdDate}}</td>
                 <td>
                   <a ui-sref="viewBudget({id:budget._id})"><i class="fa fa-search"></i></a>
-                  <a ui-sref="editBudget({id:budget._id})" ><i class="fa fa-pencil-square-o"></i></a>
+                  <a ng-click="show({id:budget._id,type:'edit'})"><i class="fa fa-pencil-square-o"></i></a>
+                  <!--<a ui-sref="editBudget({id:budget._id})" ><i class="fa fa-pencil-square-o"></i></a>-->
                 </td>
               </tr>
               </tbody>

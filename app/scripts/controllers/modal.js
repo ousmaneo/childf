@@ -8,12 +8,17 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ModalCtrl', function ($scope,close,title) {
-    $scope.title = title;
-    $scope.close = function(result) {      
+  .controller('ModalCtrl', function ($scope,close,title,item) {
+    $scope.title = 'Add ' + title;
+    if(item){
+      $scope.title = 'Update ' + title;
+      $scope[title] = item;
+    }
+
+    $scope.close = function(result) {
       close(result, 500); // close, but give 500ms for bootstrap to animate
     };
      $scope.cancel = function() {
-       close(null,500);       
+       close(null,500);
      };
   });

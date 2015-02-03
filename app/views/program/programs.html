@@ -30,7 +30,8 @@
                 <td>{{program.createdDate}}</td>
                 <td>
                   <a ui-sref="viewProgram({id:program._id})"><i class="fa fa-search"></i></a>
-                  <a ui-sref="editProgram({id:program._id})" ><i class="fa fa-pencil-square-o"></i></a>
+                  <a ng-click="show({id:program._id,type:'edit'})"><i class="fa fa-pencil-square-o"></i></a>
+                  <!--<a ui-sref="editProgram({id:program._id})" ><i class="fa fa-pencil-square-o"></i></a>-->
                 </td>
               </tr>
             </tbody>
