@@ -5,16 +5,16 @@ body {
 }
 
 a, a:link, a:visited {
-  color: #7cb342;
+  color:  #00776A;
 }
 
 a:hover {
-  color:#aed581;
+  color:#00776A;
 }
 
 .btn-primary {
   color: #fff !important;
-  background-color: #7cb342;
+  background-color:  #00776A;
   border: none;
 }
 
@@ -25,7 +25,7 @@ a:hover {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff !important;
-  background-color: #aed581;
+  background-color: #00776A;
   border: none;
 }
 
@@ -169,7 +169,7 @@ a:hover {
   display: block;
   text-decoration: none;
   cursor: pointer;
-  background-color: #689f38;
+  background-color: #009688;
   color: #B2BFDC;
 }
 
@@ -202,7 +202,7 @@ a:hover {
 }
 
 .dataTables_wrapper {
-  background-color: #689f38;
+  background-color: #009688;
   width: 100% !important;
 }
 
@@ -242,7 +242,7 @@ a:hover {
 }
 
 .dataTables_wrapper table thead {
-  background-color: #8bc34a !important;
+  background-color: #00776A !important;
 
 }
 
@@ -273,7 +273,7 @@ a:hover {
 
 .dataTables_wrapper table tbody td a {
   background: none;
-  color: #8bc34a;
+  color: #00776A;
   padding: 10px;
 }
 
@@ -306,7 +306,7 @@ a:hover {
 
 
 .dataTables_wrapper .dataTables_paginate a {
-  background: url() 0 0 no-repeat #8bc34a;
+  background: url() 0 0 no-repeat #00776A;
   margin-left: 5px !important;
 
 }
@@ -320,7 +320,7 @@ a:hover {
 /* Modal */
 
 .modal-dialog .modal-content {
-  background-color: #689f38;
+  background-color: #009688;
   border: none;
   box-shadow: none;
   color: #fff;
@@ -328,7 +328,7 @@ a:hover {
 }
 
 .modal-dialog .modal-content .modal-header {
-  background-color: #689f38;
+  background-color: #009688;
   border-bottom: 0px none;
   border-radius: 5px 5px 0 0;
 }
@@ -344,7 +344,7 @@ a:hover {
 }
 
 .modal-dialog .modal-content .modal-footer{
-  background-color: #689f38;
+  background-color: #009688;
   border-top: 0px none;
   border-radius: 0 0 5px 5px;
 }
@@ -358,13 +358,13 @@ a:hover {
 /* sidebar */
 
 #sidebar-wrapper {
-  background: none repeat scroll 0% 0% #8bc34a;
+  background: none repeat scroll 0% 0% #00776A;
   color: #fff;
 }
 
 #sidebar-wrapper .sidebar-main a,
 #sidebar-wrapper .sidebar-footer {
-  background: none repeat scroll 0% 0% #689f38;
+  background: none repeat scroll 0% 0% #009688;
   color: #fff;
 }
 
@@ -379,8 +379,8 @@ a:hover {
 
 #sidebar-wrapper a:hover{
   color: #fff;
-  border: 3px solid #689F38;
-  background-color: #689F38;
+  border: 3px solid #009688;
+  background-color: #009688;
 }
 
 
