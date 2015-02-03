@@ -22,8 +22,7 @@ a:hover {
 .btn-primary:focus,
 .btn-primary.focus,
 .btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
+.btn-primary.active {
   color: #fff !important;
   background-color: #00776A;
   border: none;
@@ -328,7 +327,7 @@ a:hover {
 }
 
 .modal-dialog .modal-content .modal-header {
-  background-color: #009688;
+  background-color: #00776A;
   border-bottom: 0px none;
   border-radius: 5px 5px 0 0;
 }
@@ -344,14 +343,18 @@ a:hover {
 }
 
 .modal-dialog .modal-content .modal-footer{
-  background-color: #009688;
+  background-color: #00776A;
   border-top: 0px none;
   border-radius: 0 0 5px 5px;
 }
 
 
-.modal-dialog .modal-content .modal-body {
+.modal-dialog .modal-content .modal-footer .btn {
+  background-color: #009688;
+}
 
+.modal-dialog .modal-content .modal-footer .btn:hover {
+  color: #fff;
 }
 
 
