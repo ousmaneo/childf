@@ -8,16 +8,16 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ModalCtrl', function ($scope,close,title,item,select) {
+  .controller('ModalCtrl', function ($scope,close,title,item) {
     $scope.title = 'Add ' + title;
     if(item){
       $scope.title = 'Update ' + title;
       $scope[title] = item;
     }
 
-    if(select){
-      $scope.options = select;
-    }
+    //if(select){
+    //  $scope.options = select;
+    //}
 
     $scope.close = function(result) {
       close(result, 500); // close, but give 500ms for bootstrap to animate

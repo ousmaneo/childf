@@ -45,8 +45,7 @@ angular.module('childfundApp')
         controller: 'ModalCtrl',
         inputs: {
           title: 'project',
-          item:Project,
-          select:Programs
+          item:Project
         }
       }).then(function(modal) {
         modal.element.modal();

@@ -195,7 +195,7 @@ angular
            },
            'tableContainer@index':{
              templateUrl:'views/program/projects-partial.html',
-             controller:'ProjectsCtrl'
+             controller:'ProgramsCtrl'
            }
          },
          resolve:{
@@ -283,7 +283,7 @@ angular
          views:{
            'layoutContainer@index':{
              templateUrl:'views/project/project-view.html',
-             controller:'ProjectsCtrl'
+             controller:'projectCtrl'
            }
          },
          resolve:{
