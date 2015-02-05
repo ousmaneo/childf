@@ -1,19 +1,23 @@
-
 <ca-widget>
-  <widget-header icon="fa-calandar" title="Program Name: {{program.name|uppercase}}">
-    <a ui-sref="editProgram({id:program._id})" ><i class="fa fa-pencil-square-o"></i></a>
-    <a ui-sref="removeProgram({id:program._id})" ><i class="fa fa-trash-o"></i></a>
-  </widget-header>
-  <widget-body classes="medium no-padding">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-      <h4>Description</h4>
-      <p>{{program.description}}</p>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <h4>Author</h4>
-      <p>{{program.createdBy}}</p>
-      <h4>Creation Date</h4>
-      <p>{{program.createdDate}}</p>
-    </div>
-  </widget-body>
+  <div class='view-page view-page-program col-xs-12'>
+    <widget-header icon="fa-calendar" title="Program Name: {{program.name|uppercase}}">
+      <a ui-sref="editProgram({id:program._id})" ><i class="fa fa-pencil-square-o"></i></a>
+      <a ui-sref="removeProgram({id:program._id})" ><i class="fa fa-trash-o"></i></a>
+    </widget-header>
+    <widget-body classes="medium no-padding">
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <div class='item'>
+          <h4> Description :</h4> {{program.description}}
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class='item'>
+          <h4> Author :</h4> {{program.createdBy}}
+        </div>
+        <div class='item'>
+          <h4> Creation Date :</h4> {{program.createdDate}}
+        </div>
+      </div>
+    </widget-body>
+  </div>
 </ca-widget>

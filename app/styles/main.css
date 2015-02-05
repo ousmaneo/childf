@@ -28,6 +28,64 @@ a:hover {
   border: none;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.padding {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.padding-left {
+  padding-right: 0;
+  padding-left: 15px;
+}
+
+.padding-right {
+  padding-right: 15px;
+  padding-left: 0;
+}
+
+.view-page {
+  margin-bottom: 15px;
+}
+
+.view-page .item {
+  /*padding: 0 0 0 20px;*/
+}
+
+.view-page .item h4 {
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: normal;
+  color: #00776A;
+  width: auto;
+  font-size: 16px;
+  padding: 5px 5px 0px 10px;
+}
+
+.view-page .widget-body {
+  background-color:  #fff;
+}
+
+.view-page .dataTables_wrapper, .view-page .dataTables_wrapper table thead {
+  background-color: #18A99E !important;
+}
+
+.view-page .dataTables_wrapper .dataTables_length,
+.view-page .dataTables_wrapper .dataTables_filter,
+.view-page .dataTables_wrapper table thead th,
+.view-page .dataTables_wrapper table thead td,
+.view-page .dataTables_wrapper .dataTables_paginate,
+.view-page .dataTables_wrapper .dataTables_info{
+  /*color:  #000;*/
+}
+
+
+
+/*.item .*/
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -361,7 +419,13 @@ a:hover {
 .widget .widget-header {
   background-color: #009688;
   border-bottom: none;
+  color: #fff;
 }
+
+.widget .widget-header a{
+  color: #fff;
+}
+
 /* sidebar */
 
 #sidebar-wrapper {
