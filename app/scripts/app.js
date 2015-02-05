@@ -172,6 +172,9 @@ angular
            },
            programItem: function () {
 
+           },
+           projectIn: function () {
+
            }
          },
         views:{
@@ -211,7 +214,7 @@ angular
            programS: function () {
 
            },
-           projectS: function ($stateParams, project,_,$q) {
+           projectIn: function ($stateParams, project,_,$q) {
              var projectPromise = $q.defer();
              project.getData(function(data) {
                var id = parseInt($stateParams.id);
@@ -220,9 +223,6 @@ angular
              });
 
              return projectPromise.promise;
-           },
-           projectItem: function () {
-
            }
          }
        })

@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ProgramsCtrl',['$scope','program','ModalService','_','moment','programS','programItem','$state','projectS', function ($scope,program,ModalService,_,moment,programS,programItem,$state,projectIn) {
+  .controller('ProgramsCtrl',['$scope','program','ModalService','_','moment','programS','programItem','$state','projectIn', function ($scope,program,ModalService,_,moment,programS,programItem,$state,projectIn) {
     if(programS){
       $scope.programs = programS;
     }else{
