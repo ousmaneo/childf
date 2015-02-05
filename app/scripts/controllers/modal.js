@@ -8,11 +8,15 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ModalCtrl', function ($scope,close,title,item) {
+  .controller('ModalCtrl', function ($scope,close,title,item,select) {
     $scope.title = 'Add ' + title;
     if(item){
       $scope.title = 'Update ' + title;
       $scope[title] = item;
+    }
+
+    if(select){
+      $scope.options = select;
     }
 
     $scope.close = function(result) {

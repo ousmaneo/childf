@@ -189,6 +189,10 @@ angular
            'layoutContainer@index':{
              templateUrl:'views/program/program-view.html',
              controller:'ProgramsCtrl'
+           },
+           'tableContainer@index':{
+             templateUrl:'views/program/projects-partial.html',
+             controller:'ProjectsCtrl'
            }
          },
          resolve:{
@@ -206,36 +210,49 @@ angular
            },
            programS: function () {
 
-           }
-         }
-       })
-       .state('editProgram',{
-         url:'/program/:id/edit',
-         parent:'index',
-         views:{
-           'layoutContainer@index':{
-             templateUrl:'views/program/program-edit.html',
-             controller:'ProgramsCtrl'
-           }
-         },
-         resolve:{
-           programItem :function ($stateParams, program,_,$q) {
-             //console.log(program);
-             var programPromise = $q.defer();
-             program.getData(function(data) {
-               var Program = _.find(data, function (item) {
-                 return item._id == $stateParams.id;
-               });
-               programPromise.resolve(Program);
+           },
+           projectS: function ($stateParams, project,_,$q) {
+             var projectPromise = $q.defer();
+             project.getData(function(data) {
+               var id = parseInt($stateParams.id);
+               var Projects = _.where(data, {programid:id});
+               projectPromise.resolve(Projects);
              });
 
-             return programPromise.promise;
+             return projectPromise.promise;
            },
-           programS: function () {
+           projectItem: function () {
 
            }
          }
        })
+       //.state('editProgram',{
+       //  url:'/program/:id/edit',
+       //  parent:'index',
+       //  views:{
+       //    'layoutContainer@index':{
+       //      templateUrl:'views/program/program-edit.html',
+       //      controller:'ProgramsCtrl'
+       //    }
+       //  },
+       //  resolve:{
+       //    programItem :function ($stateParams, program,_,$q) {
+       //      //console.log(program);
+       //      var programPromise = $q.defer();
+       //      program.getData(function(data) {
+       //        var Program = _.find(data, function (item) {
+       //          return item._id == $stateParams.id;
+       //        });
+       //        programPromise.resolve(Program);
+       //      });
+       //
+       //      return programPromise.promise;
+       //    },
+       //    programS: function () {
+       //
+       //    }
+       //  }
+       //})
        .state('projects', {
           url: '/projects',
           parent:'index',
@@ -263,7 +280,7 @@ angular
        .state('viewProject',{
          url:'/project/:id/view',
          parent:'index',
-         view:{
+         views:{
            'layoutContainer@index':{
              templateUrl:'views/project/project-view.html',
              controller:'ProjectsCtrl'
@@ -271,16 +288,15 @@ angular
          },
          resolve:{
            projectItem :function ($stateParams, project,_,$q) {
-             //console.log(program);
-             var projectPromise = $q.defer();
+             var projectsPromise = $q.defer();
              project.getData(function(data) {
                var Project = _.find(data, function (item) {
                  return item._id == $stateParams.id;
                });
-               projectPromise.resolve(Project);
+               projectsPromise.resolve(Project);
              });
 
-             return projectPromise.promise;
+             return projectsPromise.promise;
            },
            projectS: function () {
 
@@ -306,7 +322,6 @@ angular
                });
                projectPromise.resolve(Project);
              });
-
              return projectPromise.promise;
            },
            projectS: function () {

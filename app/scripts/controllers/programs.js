@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ProgramsCtrl',['$scope','program','ModalService','_','moment','programS','programItem','$state', function ($scope,program,ModalService,_,moment,programS,programItem,$state) {
+  .controller('ProgramsCtrl',['$scope','program','ModalService','_','moment','programS','programItem','$state','projectS', function ($scope,program,ModalService,_,moment,programS,programItem,$state,projectIn) {
     if(programS){
       $scope.programs = programS;
     }else{
@@ -16,9 +16,13 @@ angular.module('childfundApp')
     }
     if(programItem){
       $scope.program =  programItem;
+      if(projectIn){
+        $scope.program.projects =  projectIn;
+      }
     }else{
       $scope.program = {};
     }
+
 
     // vm.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
 
@@ -50,7 +54,7 @@ angular.module('childfundApp')
               $scope.create(result);
               $scope.programs.push($scope.program);
             }else{
-              $scope.update(result)
+              $scope.update(result);
             }
           }
         });

@@ -19,7 +19,10 @@
     <div class="form-group">
       <label for="program" class="col-sm-2 control-label">Program</label>
       <div class="col-sm-10">
-        <input type="number" name="programid" id="inputProgramid" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="project.programid">
+        <!--<input type="number" name="programid" id="inputProgramid" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="project.programid">-->
+        <select name="programid" id="programid" class="form-control" ng-model="project.programid" ng-options="option.name as option.text for option in options">
+        	<option value=""> -- Select One -- </option>
+        </select>
       </div>
     </div>
     <div class="form-group">

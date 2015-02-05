@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ProjectsCtrl',['$scope','project','ModalService','_','moment','projectS','projectItem','$state', function ($scope,project,ModalService,_,moment,projectS,projectItem,$state) {
+  .controller('ProjectsCtrl',['$scope','project','ModalService','_','moment','projectS','projectItem','$state','program', function ($scope,project,ModalService,_,moment,projectS,projectItem,$state,program) {
     if(projectS){
       $scope.projects = projectS;
     }else{
@@ -19,13 +19,18 @@ angular.module('childfundApp')
     }else{
       $scope.project = {};
     }
+
     // $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
 
     //project.getData().$promise.then(function(data) {
     //    $scope.projects = data;
     //});
+    $scope.programs=[];
 
-
+    program.getData().$promise.then(function(data) {
+      $scope.programs = data;
+    });
+    console.log($scope.programs);
     $scope.show = function(action) {
 
       if(action){
@@ -34,13 +39,14 @@ angular.module('childfundApp')
         });
       }
 
-
+      //console.log(Programs);
       ModalService.showModal({
         templateUrl: 'views/project/new.html',
         controller: 'ModalCtrl',
         inputs: {
           title: 'project',
-          item:Project
+          item:Project,
+          select:Programs
         }
       }).then(function(modal) {
         modal.element.modal();
@@ -50,7 +56,7 @@ angular.module('childfundApp')
               $scope.create(result);
               $scope.projects.push($scope.project);
             }else{
-              $scope.update(result)
+              $scope.update(result);
             }
           }
         });
