@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('AccountCtrl',['$scope','account','ModalService','_','moment','accountS','accountItem','$state','$q', function ($scope,account,ModalService,_,moment,accountS,accountItem,$state,$q) {
+  .controller('AccountCtrl',['$scope','account','ModalService','_','moment','accountS','accountItem','$state','activity', function ($scope,account,ModalService,_,moment,accountS,accountItem,$state,activity) {
     if(accountS){
       $scope.accounts = accountS;
     }else{
@@ -21,6 +21,11 @@ angular.module('childfundApp')
     }
     // $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
 
+    $scope.activities=[];
+
+    account.getData().$promise.then(function(data) {
+      $scope.activities = data;
+    });
 
     $scope.show = function(action) {
 
@@ -36,7 +41,9 @@ angular.module('childfundApp')
         controller: 'ModalCtrl',
         inputs: {
           title: 'account',
-          item:Account
+          item:Account,
+          select:$scope.activities,
+          current:''
         }
       }).then(function(modal) {
         modal.element.modal();
@@ -57,7 +64,7 @@ angular.module('childfundApp')
       $scope.account.name = account.name;
       $scope.account.description = account.description;
       $scope.account.status = account.status;
-      $scope.account.accountId = account.accountId;
+      $scope.account.activityId = account.activityId;
       $scope.account.accountType = account.accountType;
       $scope.account.createdBy = 'neo';
       $scope.account.createdDate = new moment().format('YYYY-MM-DD HH:mm:ss');

@@ -1,9 +1,10 @@
+
 <ca-widget>
   <widget-header icon="fa-calandar" title="Project Name: {{project.name|uppercase}}">
     <a ui-sref="editProject({id:project._id})" ><i class="fa fa-pencil-square-o"></i></a>
     <a ui-sref="removeProject({id:project._id})" ><i class="fa fa-trash-o"></i></a>
   </widget-header>
-  <widget-body classes="medium no-padding">
+  <widget-body classes="medium row">
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       <h4>Description</h4>
       <p>{{project.description}}</p>

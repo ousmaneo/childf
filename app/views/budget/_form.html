@@ -17,9 +17,12 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="AccountId" class="col-sm-2 control-label">Project</label>
+      <label for="AccountId" class="col-sm-2 control-label">Account</label>
       <div class="col-sm-10">
-        <input type="number" name="accountId" id="inputAccountId" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="budget.accountId">
+        <!--<input type="number" name="accountId" id="inputAccountId" class="form-control" value="" min="{5"} ma step="" required="required" ng-model="budget.accountId">-->
+        <select name="accountId" id="accountId" class="form-control" ng-model="budget.accountId"  ng-options="item._id as item.name for item in options">
+          <option value=""> -- Select One -- </option>
+        </select>
       </div>
     </div>
     <div class="form-group">

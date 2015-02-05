@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ProgramsCtrl',['$scope','program','ModalService','_','moment','programS','programItem','$state','projectIn', function ($scope,program,ModalService,_,moment,programS,programItem,$state,projectIn) {
+  .controller('ProgramsCtrl',['$scope','program','ModalService','_','moment','programS','programItem','$state', function ($scope,program,ModalService,_,moment,programS,programItem,$state) {
     if(programS){
       $scope.programs = programS;
     }else{
@@ -16,11 +16,9 @@ angular.module('childfundApp')
     }
     if(programItem){
       $scope.program =  programItem;
-      if(projectIn){
-        $scope.program.projects =  projectIn;
-      }
     }else{
       $scope.program = {};
+
     }
 
 
@@ -44,7 +42,9 @@ angular.module('childfundApp')
         controller: 'ModalCtrl',
         inputs: {
           title: 'program',
-          item:Program
+          item:Program,
+          select:{},
+          current:''
         }
       }).then(function(modal) {
         modal.element.modal();

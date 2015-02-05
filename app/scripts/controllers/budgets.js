@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('BudgetsCtrl',['$scope','budget','ModalService','_','moment','budgetS','budgetItem','$state', function ($scope,budget,ModalService,_,moment,budgetS,budgetItem,$state) {
+  .controller('BudgetsCtrl',['$scope','budget','ModalService','_','moment','budgetS','budgetItem','$state','account', function ($scope,budget,ModalService,_,moment,budgetS,budgetItem,$state,account) {
     if(budgetS){
       $scope.budgets = budgetS;
     }else{
@@ -24,6 +24,11 @@ angular.module('childfundApp')
     //budget.getData().$promise.then(function(data) {
     //  $scope.budgets = data;
     //});
+    $scope.accounts=[];
+
+    account.getData().$promise.then(function(data) {
+      $scope.accounts = data;
+    });
 
 
     $scope.show = function(action) {
@@ -40,7 +45,9 @@ angular.module('childfundApp')
         controller: 'ModalCtrl',
         inputs: {
           title: 'budget',
-          item:Budget
+          item:Budget,
+          select:$scope.accounts,
+          current:''
         }
       }).then(function(modal) {
         modal.element.modal();

@@ -8,10 +8,8 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ReceiptsCtrl',['$scope','receipt','ModalService','_','moment','receiptS','receiptItem','$state', function ($scope,receipt,ModalService,_,moment,receiptS,receiptItem,$state) {
-    //var $scope = this;
-    //$scope.receipts = [];
-    //$scope.receipt = {};
+  .controller('ReceiptsCtrl',['$scope','receipt','ModalService','_','moment','receiptS','receiptItem','$state','account', function ($scope,receipt,ModalService,_,moment,receiptS,receiptItem,$state,account) {
+
     if(receiptS){
       $scope.receipts = receiptS;
     }else{
@@ -24,17 +22,30 @@ angular.module('childfundApp')
     }
     // $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
 
-    //receipt.getData().$promise.then(function(data) {
-    //  $scope.receipts = data;
-    //});
+    $scope.accounts=[];
+
+    account.getData().$promise.then(function(data) {
+      $scope.accounts = data;
+    });
 
 
-    $scope.show = function() {
+
+    $scope.show = function(action) {
+
+      if(action){
+        var Receipt = _.find($scope.receipts, function (item) {
+          return item._id == action.id;
+        });
+      }
+
       ModalService.showModal({
         templateUrl: 'views/receipt/new.html',
         controller: 'ModalCtrl',
         inputs: {
-          title: 'Add receipt'
+          title: 'receipt',
+          item:Receipt,
+          select:$scope.accounts,
+          current:''
         }
       }).then(function(modal) {
         modal.element.modal();

@@ -194,8 +194,8 @@ angular
              controller:'ProgramsCtrl'
            },
            'tableContainer@index':{
-             templateUrl:'views/program/projects-partial.html',
-             controller:'ProgramsCtrl'
+             templateUrl:'views/project/projects.html',
+             controller:'ProjectsCtrl'
            }
          },
          resolve:{
@@ -214,15 +214,17 @@ angular
            programS: function () {
 
            },
-           projectIn: function ($stateParams, project,_,$q) {
+           projectS: function ($stateParams, project,_,$q) {
              var projectPromise = $q.defer();
              project.getData(function(data) {
                var id = parseInt($stateParams.id);
                var Projects = _.where(data, {programid:id});
                projectPromise.resolve(Projects);
              });
-
              return projectPromise.promise;
+           },
+           projectItem: function () {
+
            }
          }
        })
@@ -283,7 +285,11 @@ angular
          views:{
            'layoutContainer@index':{
              templateUrl:'views/project/project-view.html',
-             controller:'projectCtrl'
+             controller:'ProjectsCtrl'
+           },
+           'tableContainer@index':{
+             templateUrl:'views/activity/activity.html',
+             controller:'ActivityCtrl'
            }
          },
          resolve:{
@@ -299,6 +305,18 @@ angular
              return projectsPromise.promise;
            },
            projectS: function () {
+
+           },
+           activityS :function ($stateParams, activity,$q) {
+             var activityPromise = $q.defer();
+             activity.getData(function(data) {
+               var id = parseInt($stateParams.id);
+               var Activities = _.where(data, {projectid:id});
+               activityPromise.resolve(Activities);
+             });
+             return activityPromise.promise;
+           },
+           activityItem: function () {
 
            }
          }

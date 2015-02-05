@@ -8,7 +8,7 @@
  * Controller of the childfundApp
  */
 angular.module('childfundApp')
-  .controller('ActivityCtrl',['$scope','activity','ModalService','_','moment','activityS','activityItem','$state', function ($scope,activity,ModalService,_,moment,activityS,activityItem,$state) {
+  .controller('ActivityCtrl',['$scope','activity','ModalService','_','moment','activityS','activityItem','$state','project', function ($scope,activity,ModalService,_,moment,activityS,activityItem,$state,project) {
     if(activityS){
       $scope.activities = activityS;
     }else{
@@ -23,7 +23,11 @@ angular.module('childfundApp')
 
 
 
+    $scope.projects=[];
 
+    project.getData().$promise.then(function(data) {
+      $scope.projects = data;
+    });
 
     $scope.show = function(action) {
 
@@ -39,7 +43,9 @@ angular.module('childfundApp')
         controller: 'ModalCtrl',
         inputs: {
           title: 'activity',
-          item:Activity
+          item:Activity,
+          select:$scope.projects,
+          current:''
         }
       }).then(function(modal) {
         modal.element.modal();

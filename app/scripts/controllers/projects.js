@@ -18,6 +18,7 @@ angular.module('childfundApp')
       $scope.project =  projectItem;
     }else{
       $scope.project = {};
+
     }
 
     // $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(2);
@@ -25,12 +26,13 @@ angular.module('childfundApp')
     //project.getData().$promise.then(function(data) {
     //    $scope.projects = data;
     //});
+
     $scope.programs=[];
 
     program.getData().$promise.then(function(data) {
       $scope.programs = data;
     });
-    console.log($scope.programs);
+    //console.log($scope.programs);
     $scope.show = function(action) {
 
       if(action){
@@ -39,13 +41,15 @@ angular.module('childfundApp')
         });
       }
 
-      //console.log(Programs);
+
       ModalService.showModal({
         templateUrl: 'views/project/new.html',
         controller: 'ModalCtrl',
         inputs: {
           title: 'project',
-          item:Project
+          item:Project,
+          select:$scope.programs,
+          current:$state.params.id
         }
       }).then(function(modal) {
         modal.element.modal();
