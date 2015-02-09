@@ -69,8 +69,9 @@ a:hover {
   background-color:  #fff;
 }
 
-.view-page .dataTables_wrapper, .view-page .dataTables_wrapper table thead {
-  background-color: #18A99E !important;
+.view-page .dataTables_wrapper table thead,
+.view-page .dataTables_wrapper {
+  background-color: transparent !important;
 }
 
 .view-page .dataTables_wrapper .dataTables_length,
@@ -79,7 +80,17 @@ a:hover {
 .view-page .dataTables_wrapper table thead td,
 .view-page .dataTables_wrapper .dataTables_paginate,
 .view-page .dataTables_wrapper .dataTables_info{
-  /*color:  #000;*/
+  color:  #000;
+}
+
+.view-page .dataTables_wrapper table th,
+.view-page .dataTables_wrapper table td {
+  border-top: 1px solid #ddd !important;
+}
+
+.view-page .dataTables_wrapper table thead th,
+.view-page .dataTables_wrapper table thead td {
+  border-bottom: 2px solid #ddd;
 }
 
 
@@ -415,15 +426,15 @@ a:hover {
   color: #fff;
 }
 
-
 .widget .widget-header {
-  background-color: #009688;
-  border-bottom: none;
-  color: #fff;
+  background-color: #fff;
+  border-bottom: 1px solid #009688;
+  color:  #009688;
+  text-transform: capitalize;
 }
 
 .widget .widget-header a{
-  color: #fff;
+  color:  #009688;
 }
 
 /* sidebar */

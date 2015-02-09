@@ -2,42 +2,44 @@
 <div class="row">
   <div class="col-lg-12">
     <ca-widget>
-      <widget-header icon="fa-tasks" title="Activities">
+      <div class='view-page view-page-program col-xs-12'>
+        <widget-header icon="fa-tasks" title="Activities">
 
-        <a href="" class="btn btn-primary" ng-click="show()">Create</a>
-      </widget-header>
-      <widget-body classes="medium no-padding">
-        <div class="table-responsive">
-          <table datatable="ng"  class="row-border hover">
-            <thead>
-            <tr>
-              <td>Id</td>
-              <td>Name</td>
-              <td>Description</td>
-              <td>Project</td>
-              <td>Created By</td>
-              <td>Created Date</td>
-              <td>Actions</td>
-            </tr>
-          </thead>
-          <tbody>
-              <tr ng-repeat="activity in activities">
-                <td>{{activity._id}}</td>
-                <td>{{activity.name}}</td>
-                <td>{{activity.description}}</td>
-                <td>{{activity.projectid}}</td>
-                <td>{{activity.createdBy}}</td>
-                <td>{{activity.createdDate}}</td>
-                <td>
-                  <a ui-sref="viewActivity({id:activity._id})"><i class="fa fa-search"></i></a>
-                  <a ng-click="show({id:activity._id,type:'edit'})"><i class="fa fa-pencil-square-o"></i></a>
-                  <!--<a ui-sref="editActivity({id:activity._id})" ><i class="fa fa-pencil-square-o"></i></a>-->
-                </td>
+          <a href="" class="btn btn-primary" ng-click="show()">Create</a>
+        </widget-header>
+        <widget-body classes="medium no-padding">
+          <div class="table-responsive">
+            <table datatable="ng"  class="row-border hover">
+              <thead>
+              <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Project</td>
+                <td>Created By</td>
+                <td>Created Date</td>
+                <td>Actions</td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-      </widget-body>
+            </thead>
+            <tbody>
+                <tr ng-repeat="activity in activities">
+                  <td>{{activity._id}}</td>
+                  <td>{{activity.name}}</td>
+                  <td>{{activity.description}}</td>
+                  <td>{{activity.projectid}}</td>
+                  <td>{{activity.createdBy}}</td>
+                  <td>{{activity.createdDate}}</td>
+                  <td>
+                    <a ui-sref="viewActivity({id:activity._id})"><i class="fa fa-search"></i></a>
+                    <a ng-click="show({id:activity._id,type:'edit'})"><i class="fa fa-pencil-square-o"></i></a>
+                    <!--<a ui-sref="editActivity({id:activity._id})" ><i class="fa fa-pencil-square-o"></i></a>-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </widget-body>
+      </div>
     </ca-widget>
   </div>
 </div>

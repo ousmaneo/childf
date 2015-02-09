@@ -2,43 +2,45 @@
 <div class="row">
   <div class="col-lg-12">
     <ca-widget>
-      <widget-header icon="fa-tasks" title="accounts">
+      <div class='view-page view-page-program col-xs-12'>
+        <widget-header icon="fa-tasks" title="accounts">
 
-        <a href="" class="btn btn-primary" ng-click="show()">Create</a>
-      </widget-header>
-      <widget-body classes="medium no-padding">
-        <div class="table-responsive">
-          <table datatable="ng"  class="row-border hover">
-            <thead>
-            <tr>
-              <td>Id</td>
-              <td>Name</td>
-              <td>Description</td>
-              <td>Activity</td>
-              <td>Account type</td>
-              <td>Created Date</td>
-              <td>Actions</td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="account in accounts">
-              <td>{{account._id}}</td>
-              <td>{{account.name}}</td>
-              <td>{{account.description}}</td>
-              <td>{{account.activityId}}</td>
-              <td>{{account.accountType}}</td>
-              <td>{{account.createdDate}}</td>
-              <td>
-                <a ui-sref="viewAccount({id:account._id})"><i class="fa fa-search"></i></a>
-                <a ng-click="show({id:account._id,type:'edit'})"><i class="fa fa-pencil-square-o"></i></a>
-                <!--<a ui-sref="editAccount({id:account._id})" ><i class="fa fa-pencil-square-o"></i></a>-->
+          <a href="" class="btn btn-primary" ng-click="show()">Create</a>
+        </widget-header>
+        <widget-body classes="medium no-padding">
+          <div class="table-responsive">
+            <table datatable="ng"  class="row-border hover">
+              <thead>
+              <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Activity</td>
+                <td>Account type</td>
+                <td>Created Date</td>
+                <td>Actions</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="account in accounts">
+                <td>{{account._id}}</td>
+                <td>{{account.name}}</td>
+                <td>{{account.description}}</td>
+                <td>{{account.activityId}}</td>
+                <td>{{account.accountType}}</td>
+                <td>{{account.createdDate}}</td>
+                <td>
+                  <a ui-sref="viewAccount({id:account._id})"><i class="fa fa-search"></i></a>
+                  <a ng-click="show({id:account._id,type:'edit'})"><i class="fa fa-pencil-square-o"></i></a>
+                  <!--<a ui-sref="editAccount({id:account._id})" ><i class="fa fa-pencil-square-o"></i></a>-->
 
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </widget-body>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </widget-body>
+      </div>
     </ca-widget>
   </div>
 </div>
