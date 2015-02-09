@@ -1,26 +1,31 @@
 
 <ca-widget>
   <div class='view-page view-page-program col-xs-12'>
-    <widget-header icon="fa-calandar" title="Account Name: {{account.name|uppercase}}">
-
+    <widget-header icon="fa-briefcase" title="A{{account.name|lowercase}}">
       <a ui-sref="removeAccount({id:account._id})" ><i class="fa fa-trash-o"></i></a>
     </widget-header>
     <widget-body classes="medium no-padding">
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h4>Description</h4>
-        <p>{{account.description}}</p>
-        <h4>Description</h4>
-        <p>{{account.fundSource}}</p>
+      <div class="col-xs-12 col-md-6 col-lg-7">
+        <div class='item'>
+          <h4>Description :</h4> {{account.description}}
+        </div>
+        <div class='item'>
+          <h4>Fund source :</h4> {{account.fundSource}}
+        </div>
       </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <h4>Author</h4>
-        <p>{{account.createdBy}}</p>
-        <h4>Account</h4>
-        <p>{{account.accountId}}</p>
-        <h4>Fiscal Year</h4>
-        <p>{{account.fiscalYear}}</p>
-        <h4>Creation Date</h4>
-        <p>{{account.createdDate}}</p>
+      <div class="col-xs-12 col-md-6 col-lg-5">
+        <div class='item'>
+          <h4>Author : </h4> {{account.createdBy}}
+        </div>
+        <div class='item'>
+          <h4>Account :</h4> {{account.accountId}}
+        </div>
+        <div class='item'>
+          <h4>Fiscal Year :</h4> {{account.fiscalYear}}
+        </div>
+        <div class='item'>
+          <h4>Creation Date :</h4> {{account.createdDate}}
+        </div>
       </div>
     </widget-body>
   </div>

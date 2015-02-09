@@ -1,16 +1,16 @@
 <ca-widget>
   <div class='view-page view-page-program col-xs-12'>
-    <widget-header icon="fa-calendar" title="Program Name: {{program.name|uppercase}}">
+    <widget-header icon="fa-calendar" title="{{program.name|lowercase}}">
       <a ui-sref="editProgram({id:program._id})" ><i class="fa fa-pencil-square-o"></i></a>
       <a ui-sref="removeProgram({id:program._id})" ><i class="fa fa-trash-o"></i></a>
     </widget-header>
     <widget-body classes="medium no-padding">
-      <div class="col-xs-12 col-md-6 col-lg-8">
+      <div class="col-xs-12 col-md-6 col-lg-7">
         <div class='item'>
           <h4> Description :</h4> {{program.description}}
         </div>
       </div>
-      <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="col-xs-12 col-md-6 col-lg-5">
         <div class='item'>
           <h4> Author :</h4> {{program.createdBy}}
         </div>
