@@ -65,6 +65,18 @@ a:hover {
   padding: 5px 5px 0px 10px;
 }
 
+.widget .view-page .widget-header {
+  background-color: #fff;
+  border-bottom: 1px solid #009688;
+  color:  #009688;
+  text-transform: capitalize;
+}
+
+.widget .view-page .widget-header a{
+  color:  #009688;
+}
+
+
 .view-page .widget-body {
   background-color:  #fff;
 }
@@ -427,14 +439,14 @@ a:hover {
 }
 
 .widget .widget-header {
-  background-color: #fff;
-  border-bottom: 1px solid #009688;
-  color:  #009688;
+  background-color: #009688;
+  border-bottom: none;
+  color:  #fff;
   text-transform: capitalize;
 }
 
 .widget .widget-header a{
-  color:  #009688;
+  color:  #fff;
 }
 
 /* sidebar */
