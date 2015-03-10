@@ -416,7 +416,10 @@ a:hover {
   border: none;
   box-shadow: none;
   color: #fff;
+}
 
+.modal-dialog .modal-content input {
+  color: #555 !important;
 }
 
 .modal-dialog .modal-content .modal-header {
@@ -448,6 +451,28 @@ a:hover {
 
 .modal-dialog .modal-content .modal-footer .btn:hover {
   color: #fff;
+}
+
+.modal-dialog .modal-content table,
+.modal-dialog .modal-content table td,
+.modal-dialog .modal-content table th {
+  border: none !important;
+}
+
+.modal-dialog .modal-content table thead {
+  background-color: #00776A;
+}
+
+.modal-dialog .modal-content .table-hover tbody tr {
+  color: #333;
+}
+
+.modal-dialog .modal-content .table-hover tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+.modal-dialog .modal-content .table-hover tbody tr:nth-child(even) {
+  background-color: #fff;
 }
 
 .widget .widget-header {
